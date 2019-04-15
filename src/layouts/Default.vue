@@ -10,12 +10,7 @@
         <g-link class="nav__link" to="/posts">Posts</g-link>
       </nav>
     </header>
-    <g-image
-      src="~/assets/images/cat.jpeg"
-      width="500"
-      quality="100"
-      alt="cat"
-    />
+    <g-image v-if="background" :src="background" />
     <slot />
     <PostLatest />
   </div>
@@ -26,7 +21,8 @@ import PostLatest from "../components/PostLatest";
 export default {
   components: {
     PostLatest
-  }
+  },
+  props: ["background"]
 };
 </script>
 

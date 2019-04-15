@@ -1,5 +1,5 @@
 <template lang="html">
-  <Layout>
+  <Layout :background="$page.blogPost.image">
     <h1>{{ $page.blogPost.title }}</h1>
     <p>{{ $page.blogPost.date }}</p>
     <div v-html="$page.blogPost.content"></div>
@@ -13,6 +13,7 @@
     content
     tags
     date (format: "MMM Do YYYY")
+    image (height: 400)
   }
 }
 </page-query>
