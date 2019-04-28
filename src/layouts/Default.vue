@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div>
     <header class="header">
       <strong>
         <g-link to="/">{{ $static.metaData.siteName }}</g-link>
@@ -10,8 +10,10 @@
         <g-link class="nav__link" to="/posts">Posts</g-link>
       </nav>
     </header>
-    <g-image v-if="background" :src="background" />
-    <slot />
+    <g-image v-if="background" :src="background" class="billboard" />
+    <div class="layout">
+      <slot />
+    </div>
     <PostLatest />
   </div>
 </template>
@@ -49,14 +51,22 @@ body {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
+}
+.header {
+  display: flex;
+  max-width: 760px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    height: 80px;
-  }
+.billboard {
+  width: 100%;
+  height: auto;
 }
 
 .nav__link {
